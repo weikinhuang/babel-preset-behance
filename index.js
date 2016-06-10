@@ -1,5 +1,6 @@
 module.exports = {
   presets: [
+    require("babel-preset-es2015"),
     require("babel-preset-react"),
     require("babel-preset-stage-3")
   ],
@@ -10,9 +11,6 @@ module.exports = {
   ],
   "env": {
     "production": {
-      presets: [
-        require("babel-preset-es2015")
-      ],
       "plugins": [
         require('babel-plugin-transform-react-constant-elements'),
         require('babel-plugin-transform-react-inline-elements'),
