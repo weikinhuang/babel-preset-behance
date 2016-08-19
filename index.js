@@ -15,6 +15,11 @@ module.exports = {
         require('babel-plugin-transform-react-inline-elements'),
         require('babel-plugin-transform-react-remove-prop-types')['default']
       ]
+    },
+    "test": {
+      "plugins": [
+        require('babel-plugin-istanbul')
+      ]
     }
   }
 };
