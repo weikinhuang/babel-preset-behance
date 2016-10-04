@@ -5,6 +5,10 @@
   "author": "Henry Zhu <hi@henryzoo.com>",
   "license": "MIT",
   "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && mocha --timeout 10000 test",
+    "lint": "eslint index.js test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/behance/babel-preset-behance.git"
@@ -22,5 +26,12 @@
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-3": "^6.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.7.1",
+    "eslint-plugin-behance": "^1.0.0",
+    "eslint-preset-behance": "^4.0.0",
+    "mocha": "^3.1.0"
   }
 }
