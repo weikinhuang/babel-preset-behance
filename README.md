@@ -35,10 +35,34 @@ require("babel-core").transform("code", {
 ```
 
 ## Options
-* `browser` (`true` by default) - Enable browser specific presets and transforms
+* `browser` (`true` by default) - Enable browser specific presets and transforms.
+* `env` (undefined by default) - Pass down env options to [babel-preset-env](https://github.com/babel/babel-preset-env). See the [babel-preset-env docs](https://github.com/babel/babel-preset-env#options) for more info.
 
 ```json
 {
   "presets": ["behance", { "browser": true }]
+}
+{
+  "presets": ["behance", { "browser": false }]
+}
+{
+  "presets": ["behance", {
+    "browser": false,
+    "env": {
+      "targets": {
+        "chrome": 55
+      }
+    }
+  }]
+}
+{
+  "presets": ["behance", {
+    "browser": false,
+    "env": {
+      "targets": {
+        "node": "current"
+      }
+    }
+  }]
 }
 ```
