@@ -11,10 +11,7 @@ describe('babel-preset-behance', () => {
         require('babel-preset-stage-3'),
         require('babel-preset-react')
       ],
-      plugins: [
-        require('babel-plugin-transform-react-inline-elements'),
-        require('babel-plugin-transform-react-remove-prop-types').default
-      ]
+      plugins: []
     };
     expect(preset()).to.deep.equal(expected);
   });
@@ -38,7 +35,7 @@ describe('babel-preset-behance', () => {
   });
 
   describe('when "browser" is true in options', () => {
-    it('should add React preset but not the transforms when process env is not "production"', () => {
+    it('should add React preset', () => {
       process.env.NODE_ENV = 'development';
 
       const expected = {
@@ -48,23 +45,6 @@ describe('babel-preset-behance', () => {
           require('babel-preset-react')
         ],
         plugins: []
-      };
-      expect(preset(null, { browser: true })).to.deep.equal(expected);
-    });
-
-    it('should add React preset and transforms when process env is "production"', () => {
-      process.env.NODE_ENV = 'production';
-
-      const expected = {
-        presets: [
-          require('babel-preset-env'),
-          require('babel-preset-stage-3'),
-          require('babel-preset-react')
-        ],
-        plugins: [
-          require('babel-plugin-transform-react-inline-elements'),
-          require('babel-plugin-transform-react-remove-prop-types').default
-        ]
       };
       expect(preset(null, { browser: true })).to.deep.equal(expected);
     });
@@ -95,10 +75,7 @@ describe('babel-preset-behance', () => {
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
-        plugins: [
-          require('babel-plugin-transform-react-inline-elements'),
-          require('babel-plugin-transform-react-remove-prop-types').default
-        ]
+        plugins: []
       };
       expect(preset()).to.deep.equal(expected);
     });
@@ -114,10 +91,7 @@ describe('babel-preset-behance', () => {
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
-        plugins: [
-          require('babel-plugin-transform-react-inline-elements'),
-          require('babel-plugin-transform-react-remove-prop-types').default
-        ]
+        plugins: []
       };
       expect(preset(null, { env: {} })).to.deep.equal(expected);
     });
@@ -137,10 +111,7 @@ describe('babel-preset-behance', () => {
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
-        plugins: [
-          require('babel-plugin-transform-react-inline-elements'),
-          require('babel-plugin-transform-react-remove-prop-types').default
-        ]
+        plugins: []
       };
       expect(preset(null, { env: envOpts })).to.deep.equal(expected);
     });

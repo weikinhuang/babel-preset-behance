@@ -20,15 +20,6 @@ module.exports = function(context, opts) {
 
   if (browser) {
     config.presets.push(require('babel-preset-react'));
-
-    if (env === 'production') {
-      config.plugins.push.apply(config.plugins, [
-        // https://github.com/facebookincubator/create-react-app/issues/525
-        // require('babel-plugin-transform-react-constant-elements'),
-        require('babel-plugin-transform-react-inline-elements'),
-        require('babel-plugin-transform-react-remove-prop-types').default
-      ]);
-    }
   }
 
   return config;
