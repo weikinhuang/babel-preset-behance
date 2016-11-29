@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/behance/babel-preset-behance#readme",
   "dependencies": {
-    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-istanbul": "^2.0.0",
     "babel-plugin-transform-react-constant-elements": "^6.9.1",
     "babel-plugin-transform-react-inline-elements": "^6.8.0",

@@ -12,7 +12,6 @@ describe('babel-preset-behance', () => {
         require('babel-preset-react')
       ],
       plugins: [
-        require('babel-plugin-add-module-exports'),
         require('babel-plugin-transform-react-inline-elements'),
         require('babel-plugin-transform-react-remove-prop-types').default
       ]
@@ -31,7 +30,6 @@ describe('babel-preset-behance', () => {
           require('babel-preset-react')
         ],
         plugins: [
-          require('babel-plugin-add-module-exports'),
           require('babel-plugin-istanbul').default
         ]
       };
@@ -49,9 +47,7 @@ describe('babel-preset-behance', () => {
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
-        plugins: [
-          require('babel-plugin-add-module-exports')
-        ]
+        plugins: []
       };
       expect(preset(null, { browser: true })).to.deep.equal(expected);
     });
@@ -66,7 +62,6 @@ describe('babel-preset-behance', () => {
           require('babel-preset-react')
         ],
         plugins: [
-          require('babel-plugin-add-module-exports'),
           require('babel-plugin-transform-react-inline-elements'),
           require('babel-plugin-transform-react-remove-prop-types').default
         ]
@@ -84,9 +79,7 @@ describe('babel-preset-behance', () => {
           require('babel-preset-env'),
           require('babel-preset-stage-3'),
         ],
-        plugins: [
-          require('babel-plugin-add-module-exports'),
-        ]
+        plugins: []
       };
       expect(preset(null, { browser: false })).to.deep.equal(expected);
     });
@@ -103,7 +96,6 @@ describe('babel-preset-behance', () => {
           require('babel-preset-react')
         ],
         plugins: [
-          require('babel-plugin-add-module-exports'),
           require('babel-plugin-transform-react-inline-elements'),
           require('babel-plugin-transform-react-remove-prop-types').default
         ]
@@ -123,7 +115,6 @@ describe('babel-preset-behance', () => {
           require('babel-preset-react')
         ],
         plugins: [
-          require('babel-plugin-add-module-exports'),
           require('babel-plugin-transform-react-inline-elements'),
           require('babel-plugin-transform-react-remove-prop-types').default
         ]
@@ -147,7 +138,6 @@ describe('babel-preset-behance', () => {
           require('babel-preset-react')
         ],
         plugins: [
-          require('babel-plugin-add-module-exports'),
           require('babel-plugin-transform-react-inline-elements'),
           require('babel-plugin-transform-react-remove-prop-types').default
         ]

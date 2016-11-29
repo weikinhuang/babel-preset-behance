@@ -11,9 +11,7 @@ module.exports = function(context, opts) {
       envPreset,
       require('babel-preset-stage-3')
     ],
-    plugins: [
-      require('babel-plugin-add-module-exports')
-    ]
+    plugins: []
   };
 
   if (env === 'test') {
