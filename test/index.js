@@ -7,7 +7,11 @@ describe('babel-preset-behance', () => {
 
     const expected = {
       presets: [
-        require('babel-preset-env'),
+        [require('babel-preset-env'), {
+          exclude: [
+            'transform-regenerator'
+          ]
+        }],
         require('babel-preset-stage-3'),
         require('babel-preset-react')
       ],
@@ -22,7 +26,11 @@ describe('babel-preset-behance', () => {
 
       const expected = {
         presets: [
-          require('babel-preset-env'),
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator'
+            ]
+          }],
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
@@ -40,7 +48,11 @@ describe('babel-preset-behance', () => {
 
       const expected = {
         presets: [
-          require('babel-preset-env'),
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator'
+            ]
+          }],
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
@@ -56,7 +68,11 @@ describe('babel-preset-behance', () => {
 
       const expected = {
         presets: [
-          require('babel-preset-env'),
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator'
+            ]
+          }],
           require('babel-preset-stage-3'),
         ],
         plugins: []
@@ -71,7 +87,11 @@ describe('babel-preset-behance', () => {
 
       const expected = {
         presets: [
-          require('babel-preset-env'),
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator'
+            ]
+          }],
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
@@ -87,7 +107,11 @@ describe('babel-preset-behance', () => {
 
       const expected = {
         presets: [
-          [require('babel-preset-env'), {}],
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator'
+            ]
+          }],
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
@@ -102,12 +126,21 @@ describe('babel-preset-behance', () => {
       var envOpts = {
         targets: {
           chrome: 55
-        }
+        },
+        exclude: ['other-exclude']
       };
 
       const expected = {
         presets: [
-          [require('babel-preset-env'), envOpts],
+          [require('babel-preset-env'), {
+            targets: {
+              chrome: 55
+            },
+            exclude: [
+              'other-exclude',
+              'transform-regenerator'
+            ]
+          }],
           require('babel-preset-stage-3'),
           require('babel-preset-react')
         ],
