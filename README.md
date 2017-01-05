@@ -35,6 +35,9 @@ require("babel-core").transform("code", {
 ```
 
 ## Options
+
+> We currently exclude `transform-regenerator` by default.
+
 * `browser` (`true` by default) - Enable browser specific presets and transforms.
 * `env` (undefined by default) - Pass down env options to [babel-preset-env](https://github.com/babel/babel-preset-env). See the [babel-preset-env docs](https://github.com/babel/babel-preset-env#options) for more info.
 
