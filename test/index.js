@@ -21,8 +21,29 @@ describe('babel-preset-behance', () => {
   });
 
   describe('when process env is "test"', () => {
-    it('should add babel-plugin-istanbul', () => {
+    it('should add babel-plugin-rewire', () => {
       process.env.NODE_ENV = 'test';
+
+      const expected = {
+        presets: [
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator'
+            ]
+          }],
+          require('babel-preset-stage-3'),
+          require('babel-preset-react')
+        ],
+        plugins: [
+          require('babel-plugin-rewire')
+        ]
+      };
+      expect(preset()).to.deep.equal(expected);
+    });
+
+    it('should add babel-plugin-istanbul when COVERAGE=1', () => {
+      process.env.NODE_ENV = 'test';
+      process.env.COVERAGE = '1';
 
       const expected = {
         presets: [
@@ -44,6 +65,7 @@ describe('babel-preset-behance', () => {
 
     it('should add babel-plugin-rewire in the correct order', () => {
       process.env.NODE_ENV = 'test';
+      process.env.COVERAGE = '1';
 
       const expected = {
         presets: [

@@ -20,7 +20,9 @@ module.exports = function(context, opts) {
   };
 
   if (env === 'test') {
-    config.plugins.push(require('babel-plugin-istanbul').default);
+    if (process.env.COVERAGE) {
+      config.plugins.push(require('babel-plugin-istanbul').default);
+    }
     config.plugins.push(require('babel-plugin-rewire'));
   }
 
