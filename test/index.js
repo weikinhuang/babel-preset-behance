@@ -35,7 +35,29 @@ describe('babel-preset-behance', () => {
           require('babel-preset-react')
         ],
         plugins: [
-          require('babel-plugin-istanbul').default
+          require('babel-plugin-istanbul').default,
+          require('babel-plugin-rewire')
+        ]
+      };
+      expect(preset()).to.deep.equal(expected);
+    });
+
+    it('should add babel-plugin-rewire in the correct order', () => {
+      process.env.NODE_ENV = 'test';
+
+      const expected = {
+        presets: [
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator'
+            ]
+          }],
+          require('babel-preset-stage-3'),
+          require('babel-preset-react')
+        ],
+        plugins: [
+          require('babel-plugin-istanbul').default,
+          require('babel-plugin-rewire')
         ]
       };
       expect(preset()).to.deep.equal(expected);

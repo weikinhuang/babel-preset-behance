@@ -21,6 +21,7 @@ module.exports = function(context, opts) {
 
   if (env === 'test') {
     config.plugins.push(require('babel-plugin-istanbul').default);
+    config.plugins.push(require('babel-plugin-rewire'));
   }
 
   if (browser) {
