@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-behance",
-  "version": "7.0.0",
+  "version": "8.0.0-alpha.1",
   "description": "Babel preset for Behance",
   "author": "Henry Zhu <hi@henryzoo.com>",
   "license": "MIT",
@@ -19,10 +19,10 @@
   "homepage": "https://github.com/behance/babel-preset-behance#readme",
   "dependencies": {
     "babel-plugin-istanbul": "^4.0.0",
-    "babel-plugin-syntax-dynamic-import": "7.0.0-alpha.1",
     "babel-plugin-rewire": "^1.0.0",
-    "babel-preset-env": "^1.0.0",
-    "babel-preset-stage-3": "^6.5.0"
+    "babel-plugin-syntax-dynamic-import": "7.0.0-alpha.3",
+    "babel-preset-env": "v2.0.0-alpha.3",
+    "babel-preset-stage-3": "7.0.0-alpha.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
