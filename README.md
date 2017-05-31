@@ -2,6 +2,11 @@
 
 > Babel preset for Behance
 
+- We currently exclude `transform-regenerator` by default.
+- `modules` is false by default
+- Stage 3 is included
+- `rewire` and `istanbul` are in the `test` environment
+
 ## Install
 
 ```js
@@ -37,11 +42,6 @@ require("babel-core").transform("code", {
 ## Options
 
 * `env` (`{}` by default) - Pass down env options to [babel-preset-env](https://github.com/babel/babel-preset-env). See the [babel-preset-env docs](https://github.com/babel/babel-preset-env#options) for more info.
-
-> We currently exclude `transform-regenerator` by default.
-> `modules` is false by default
-> Stage 3 is included
-> `rewire` and `istanbul` in the `test` environment
 
 ```json
 {
