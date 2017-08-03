@@ -183,5 +183,27 @@ describe('babel-preset-behance', function() {
       };
       expect(preset(null, { env: envOpts })).to.deep.equal(expected);
     });
+
+    it('should only add regenerator in exclude if not included beforehand', function() {
+      process.env.NODE_ENV = 'production';
+
+      var envOpts = {
+        exclude: ['transform-regenerator'],
+      };
+
+      const expected = {
+        presets: [
+          [require('babel-preset-env'), {
+            exclude: [
+              'transform-regenerator',
+            ],
+            modules: false,
+          }],
+          require('babel-preset-stage-3'),
+        ],
+        plugins: [],
+      };
+      expect(preset(null, { env: envOpts })).to.deep.equal(expected);
+    });
   });
 });

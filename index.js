@@ -6,7 +6,7 @@ module.exports = function(context, opts) {
   if (!envOpts.exclude) {
     envOpts.exclude = ['transform-regenerator'];
   }
-  else {
+  else if (envOpts.exclude.indexOf('transform-regenerator') < 0) {
     envOpts.exclude.push('transform-regenerator');
   }
 
