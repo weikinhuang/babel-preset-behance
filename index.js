@@ -19,7 +19,11 @@ module.exports = function(context, opts) {
       [require('babel-preset-env'), envOpts],
       require('babel-preset-stage-3'),
     ],
-    plugins: [],
+    plugins: [
+      [
+        require('babel-plugin-transform-es2015-template-literals'), { loose: true },
+      ],
+    ],
   };
 
   if (env === 'test') {
