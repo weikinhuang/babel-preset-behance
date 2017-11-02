@@ -24,32 +24,6 @@ describe('babel-preset-behance', function() {
     expect(preset()).to.deep.equal(expected);
   });
 
-  describe('when process env is "test"', function() {
-    it('should add babel-plugin-istanbul when COVERAGE=1', function() {
-      process.env.NODE_ENV = 'test';
-      process.env.COVERAGE = '1';
-
-      const expected = {
-        presets: [
-          [require('babel-preset-env'), {
-            exclude: [
-              'transform-regenerator',
-            ],
-            modules: false,
-          }],
-          require('babel-preset-stage-3'),
-        ],
-        plugins: [
-          [
-            require('babel-plugin-transform-es2015-template-literals'), { loose: true },
-          ],
-          require('babel-plugin-istanbul').default,
-        ],
-      };
-      expect(preset()).to.deep.equal(expected);
-    });
-  });
-
   describe('when "env" has no options', function() {
     it('should add the env preset without options', function() {
       process.env.NODE_ENV = 'production';
