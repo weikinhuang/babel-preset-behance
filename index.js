@@ -1,5 +1,4 @@
 module.exports = function(context, opts) {
-  var env = process.env.BABEL_ENV || process.env.NODE_ENV;
   opts = opts || {};
   var envOpts = opts.env || {};
 
@@ -25,12 +24,6 @@ module.exports = function(context, opts) {
       ],
     ],
   };
-
-  if (env === 'test') {
-    if (process.env.COVERAGE) {
-      config.plugins.push(require('babel-plugin-istanbul').default);
-    }
-  }
 
   return config;
 };
