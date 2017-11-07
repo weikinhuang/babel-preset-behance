@@ -2,25 +2,30 @@ module.exports = function(context, opts) {
   opts = opts || {};
   var envOpts = opts.env || {};
 
-  if (!envOpts.exclude) {
+  if (envOpts.exclude === undefined) {
     envOpts.exclude = ['transform-regenerator'];
   }
   else if (envOpts.exclude.indexOf('transform-regenerator') < 0) {
     envOpts.exclude.push('transform-regenerator');
   }
 
-  if (!('modules' in envOpts)) {
+  if (envOpts.modules === undefined) {
     envOpts.modules = false;
   }
 
+  if (envOpts.useBuiltIns === undefined) {
+    envOpts.useBuiltIns = 'entry';
+  }
+
+
   var config = {
     presets: [
-      [require('babel-preset-env'), envOpts],
-      require('babel-preset-stage-3'),
+      [require('@babel/preset-env'), envOpts],
+      [require('@babel/preset-stage-3'), { loose: true }],
     ],
     plugins: [
       [
-        require('babel-plugin-transform-es2015-template-literals'), { loose: true },
+        require('@babel/plugin-transform-template-literals'), { loose: true },
       ],
     ],
   };
