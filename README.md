@@ -4,8 +4,8 @@
 
 - We currently exclude `transform-regenerator` by default.
 - `modules` is false by default (for webpack >= 2)
-- Stage 3 is included
-- `istanbul` are in the `test` environment
+- `useBuiltIns` is set to `entry`
+- Stage 3 (loose) is included
 
 ## Install
 
