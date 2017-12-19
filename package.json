@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/behance/babel-preset-behance#readme",
   "dependencies": {
-    "@babel/plugin-transform-template-literals": "7.0.0-beta.31",
-    "@babel/preset-env": "7.0.0-beta.31",
-    "@babel/preset-stage-3": "7.0.0-beta.31"
+    "@babel/plugin-transform-template-literals": "7.0.0-beta.35",
+    "@babel/preset-env": "7.0.0-beta.35",
+    "@babel/preset-stage-3": "7.0.0-beta.35"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.31",
+    "@babel/core": "7.0.0-beta.35",
     "chai": "^3.5.0",
     "eslint": "^3.7.1",
     "eslint-plugin-behance": "^1.0.0",

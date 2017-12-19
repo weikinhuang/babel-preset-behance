@@ -9,9 +9,6 @@ describe('babel-preset-behance', function() {
       const expected = {
         presets: [
           [require('@babel/preset-env'), {
-            exclude: [
-              'transform-regenerator',
-            ],
             modules: false,
             useBuiltIns: 'entry',
           }],
@@ -34,9 +31,6 @@ describe('babel-preset-behance', function() {
       const expected = {
         presets: [
           [require('@babel/preset-env'), {
-            exclude: [
-              'transform-regenerator',
-            ],
             modules: false,
             useBuiltIns: 'entry',
           }],
@@ -69,7 +63,6 @@ describe('babel-preset-behance', function() {
             },
             exclude: [
               'other-exclude',
-              'transform-regenerator',
             ],
             modules: false,
             useBuiltIns: 'entry',
@@ -104,34 +97,6 @@ describe('babel-preset-behance', function() {
             },
             exclude: [
               'other-exclude',
-              'transform-regenerator',
-            ],
-            modules: false,
-            useBuiltIns: 'entry',
-          }],
-          [require('@babel/preset-stage-3'), { loose: true }],
-        ],
-        plugins: [
-          [
-            require('@babel/plugin-transform-template-literals'), { loose: true },
-          ],
-        ],
-      };
-      expect(preset(null, { env: envOpts })).to.deep.equal(expected);
-    });
-
-    it('should only add regenerator in exclude if not included beforehand', function() {
-      process.env.NODE_ENV = 'production';
-
-      var envOpts = {
-        exclude: ['transform-regenerator'],
-      };
-
-      const expected = {
-        presets: [
-          [require('@babel/preset-env'), {
-            exclude: [
-              'transform-regenerator',
             ],
             modules: false,
             useBuiltIns: 'entry',

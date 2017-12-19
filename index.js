@@ -2,13 +2,6 @@ module.exports = function(context, opts) {
   opts = opts || {};
   var envOpts = opts.env || {};
 
-  if (envOpts.exclude === undefined) {
-    envOpts.exclude = ['transform-regenerator'];
-  }
-  else if (envOpts.exclude.indexOf('transform-regenerator') < 0) {
-    envOpts.exclude.push('transform-regenerator');
-  }
-
   if (envOpts.modules === undefined) {
     envOpts.modules = false;
   }

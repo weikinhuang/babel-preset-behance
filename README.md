@@ -2,10 +2,9 @@
 
 > Babel preset for Behance
 
-- We currently exclude `transform-regenerator` by default.
 - `modules` is false by default (for webpack >= 2)
-- `useBuiltIns` is set to `entry`
-- Stage 3 (loose) is included
+- `useBuiltIns` is set to `entry` instead of `false`
+- Stage 3 (`loose`) is included
 
 ## Install
 
