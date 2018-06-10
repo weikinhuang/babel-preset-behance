@@ -1,5 +1,5 @@
-var preset = require('..');
-var expect = require('chai').expect;
+const preset = require('..');
+const expect = require('chai').expect;
 
 describe('babel-preset-behance', function() {
   describe('when "env" has no options', function() {
@@ -48,7 +48,7 @@ describe('babel-preset-behance', function() {
     it('should add the env preset passing down exclude option', function() {
       process.env.NODE_ENV = 'production';
 
-      var envOpts = {
+      const envOpts = {
         targets: {
           chrome: 55,
         },
@@ -81,7 +81,7 @@ describe('babel-preset-behance', function() {
     it('should add the env preset passing down modules option as undefined', function() {
       process.env.NODE_ENV = 'production';
 
-      var envOpts = {
+      const envOpts = {
         targets: {
           chrome: 55,
         },

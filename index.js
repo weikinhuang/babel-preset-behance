@@ -1,6 +1,6 @@
 module.exports = function(context, opts) {
   opts = opts || {};
-  var envOpts = opts.env || {};
+  const envOpts = opts.env || {};
 
   if (envOpts.modules === undefined) {
     envOpts.modules = false;
@@ -10,8 +10,7 @@ module.exports = function(context, opts) {
     envOpts.useBuiltIns = 'entry';
   }
 
-
-  var config = {
+  const config = {
     presets: [
       [require('@babel/preset-env'), envOpts],
       [require('@babel/preset-stage-3'), { loose: true }],
